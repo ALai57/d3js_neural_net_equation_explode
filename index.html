@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="./bootstrap.min.css"/>
+		
+		<meta name="generator" content="BBEdit">
+		<script type="text/javascript"
+		   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js">   
+		</script>
+		<script src="./d3.min.js"> </script>
+		<script src="./jquery-3.2.1.min.js"> </script>
+		<script src="./bootstrap.min.js"> </script>
+		<style>
+		h1 { font-weight: bold; }
+		h3 { font-weight: bold; }
+		h4 { font-weight: bold; font-style: italic; }
+		</style>
+	</head>
+	
+	<body>	
+		
+		<script>
+			//Inputs and configuration
+			
+			//SVG drawing size
+			var wd = 500;
+			var ht = 400;
+			
+			var x = d3.scaleLinear().domain([-2, 10])
+									.range([0, wd]);
+			var y = d3.scaleLinear().domain([5,-5])
+									.range([0, ht]);
+									
+			function translate(xIn,yIn){
+				return "translate(" + xIn + "," + yIn + ")";
+			}
+			function translateRotate(xIn,yIn,rIn,wdth,hgt){
+				return "translate(" + xIn + "," + yIn + ")" + "rotate(" + rIn + "," + wdth + "," + hgt + ")";;
+			}
+			
+			
+			function calcWidth(w){
+				return Math.abs(x(w)-x(0));
+			}
+			function calcHeight(h){
+				return Math.abs(y(h)-y(0));
+			}
+			
+			MathJax.Hub.Config({
+			  skipStartupTypeset:true
+			});
+			
+		</script>
+		
+
+		<div class="container"> 
+		<div class = "row"> <div class="col-md-6 col-md-offset-3">
+			
+			<h3>UNDERSTANDING NEURAL NETWORK MATHEMATICS</h3> 
+
+			<p>Artificial Neural Networks take a few key behaviors from brain cells and try to replicate those behaviors in a computer program. Specifically, there are three features that are explicitly programmed into an artificial neural network.</p>
+			
+			<p><strong>1) Cell Input/Output Relationships.</strong> 
+			Real brain cells receive electrical input signals and send out electrical signals to other cells. In a real brain cell, the cell's electrical output is directly related to the cell's electrical input. The neural network is set up the same way: nodes in the artificial neural network listen to inputs, then respond with outputs.<p>
+			
+			<p><strong>2) Threshold.</strong> 
+			In the brain, cells must exceed a minimum threshold of electrical input to start generating outputs. Essentially, there's a threshold effect - below the threshold, nothing happens. Above the threshold value, more input leads to more output. The artificial neural network will replicate this feature of real cells: the node will only have output if the input exceeds a threshold value.</p>
+			
+			<!-- <p>The figure below shows data from real neurons - it shows that once neurons get enough signals coming in, they start sending signals of their own.</p> -->
+			
+			<!-- <p>Beer RD (1990) Intelligence as Adaptive Behavior: An Experiment in Computational Neuroethology. San Diego: Acadmic Press, Inc.</p> -->
+
+			<p><strong>3) Selective listening.</strong> 
+			In the brian, not all electrical input signals are equal; input signals from some brain cells count more than others. For example, some signals could be worth 3x more than others. And some signals could be worth nothing at all. In the artificial neural network, we will replicate this principle by weighting each node's inputs differently.</p>
+			<p>Click the example below to see how the neural network equation imitates biological brains.</p>
+			<div id='EquationExplode'>
+				<script src="./equationExplodeFunctions.js"></script>
+			</div>
+			<br>
+			
+		</div></div>
+		<div id="NetworkGraph"></div>
+		</div>
+		
+
+	</body>
+	
+</html>
