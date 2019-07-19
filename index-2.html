@@ -19,23 +19,23 @@
     <div class="container">
       <div class = "row"> <div class="col-md-6 col-md-offset-3">
 
-	  <h3>UNDERSTANDING NEURAL NETWORK MATHEMATICS</h3>
+	  <h3>NEURAL NETWORK MATHEMATICS</h3>
 
-	  <p>Artificial Neural Networks are computer programs that emulate the way actual Neurons behave. Three key features of biological cells are explicitly programmed into an artificial neural network.</p>
+	  <p>Artificial Neural Networks perform computations by emulating the way actual Neurons behave. Artificial Neural Networks rely on three key features of biological cells.</p>
 
 	  <p><strong>1) Flow of information.</strong>
-	    In real neural networks, information flows into a Neuron, then the Neuron decides what to do, and it sends signals to the next Neurons down the chain. The neural network is set up the same way: nodes in the artificial neural network listen to inputs, then respond with outputs.<p>
+	    In biological neural networks, information is sent down a chain of neurons: from one or more Neurons to the next Neurons downstream. When information (electrical signals) flows into a Neuron, the Neuron processes that information, determines whether or not to pass the signals along, and sends signals to the next Neurons down the chain. The neural network is set up the same way: nodes in the artificial neural network listen to inputs from multiple other nodes, process that information, and determine how much to pass on to the next nodes in the chain.<p>
 
-	  <p><strong>2) Threshold.</strong>
-	    In a real brain cell, there is a minimum amount of electrical input required to start generating outputs. If the amount of input is below the threshold, nothing happens. Once the amount of input exceeds the threshold value, more input leads to more output. Artificial neural networks replicate this feature of real cells: the node will only have output if the input exceeds a threshold value.</p>
+	  <p><strong>2) Activation Threshold.</strong>
+	    In a biological neuron, a certain amount of electrical input is required to start generating outputs. If the electrical input is below this threshold, nothing happens. However, once the amount of input exceeds the threshold value, more input leads to more output. Artificial neural networks replicate this feature of real cells: the node will only send signals to the next nodes down the chain if the input exceeds a threshold value.</p>
 
 	  <!-- <p>The figure below shows data from real neurons - it shows that once neurons get enough signals coming in, they start sending signals of their own.</p> -->
 
 	  <!-- <p>Beer RD (1990) Intelligence as Adaptive Behavior: An Experiment in Computational Neuroethology. San Diego: Acadmic Press, Inc.</p> -->
 
 	  <p><strong>3) Selective listening.</strong>
-	    In the brian, not all electrical input signals are equivalent; input signals from some brain cells counts more than others. For example, signals from Neuron A could be worth 3x more than signals from Neuron B. And some signals could be worth nothing at all. Artificial neural networks, replicate this principle by weighting inputs.</p>
-	  <p>Click the example below to see how the neural network equation imitates biological brains.</p>
+	    In biological neural networks, not all input signals are equivalent; input signals from some neurons count more than others. If Neuron A needs 10 units of electrical input to reach its threshold, signals from Neuron B could count  3x more than signals from Neuron C. In this case, 3 units of input from Neuron B and 1 unit of input from C could reach the threshold. Some signals could even be worth nothing at all! Artificial neural networks, replicate this principle by weighting inputs when determining if the threshold is reached or not.</p>
+	  <p>Click the example below to see an example neural network equation with 3 neurons (circles). As you click, the equation will expand into its component parts! The inputs to each neuron are labeled In1, In2, In3, and the signal the neurons pass on down the chain is the expression within the red circles.</p>
 	  <div id='EquationExplode'>
 	    <script src="./equation-explode.js"></script>
 	  </div>
