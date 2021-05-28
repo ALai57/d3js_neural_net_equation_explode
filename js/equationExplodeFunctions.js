@@ -1,5 +1,6 @@
 
 
+
 var xEq = d3.scaleLinear().domain([-2, 10])
 							.range([0, 600]);
 var yEq = d3.scaleLinear().domain([5,-5])
@@ -755,3 +756,28 @@ function undoExplodeEqn4(){
 		.attr('x',function(d){return xEq(d);});
 		
 }
+
+
+//Inputs and configuration	
+			//SVG drawing size
+var wd = 500;
+var ht = 400;	
+			var x = d3.scaleLinear().domain([-2, 10])
+						.range([0, wd]);
+var y = d3.scaleLinear().domain([5,-5])
+						.range([0, ht]);
+						
+function translate(xIn,yIn){
+	return "translate(" + xIn + "," + yIn + ")";
+}
+function translateRotate(xIn,yIn,rIn,wdth,hgt){
+	return "translate(" + xIn + "," + yIn + ")" + "rotate(" + rIn + "," + wdth + "," + hgt + ")";;
+}	
+			
+function calcWidth(w){
+	return Math.abs(x(w)-x(0));
+}
+function calcHeight(h){
+	return Math.abs(y(h)-y(0));
+}	
+MathJax.Hub.Config({skipStartupTypeset:tr})
