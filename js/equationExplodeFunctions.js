@@ -33,20 +33,36 @@ var eqnX_Left_Denom_Previous, eqnX_Right_Denom_Previous;
 var eqnX_Left_Bar_w_Previous, eqnX_Right_Bar_w_Previous;
 			
 var EXPLODE_STATE=1;
+var FORWARD=true;
 
 function nextExplode(){
-	if (EXPLODE_STATE === 1){
-		explodeEqn();
-		EXPLODE_STATE=EXPLODE_STATE+1;
-	}else if (EXPLODE_STATE === 2){
-		explodeEqn2();
-		EXPLODE_STATE=EXPLODE_STATE+1;
-	}else if (EXPLODE_STATE === 3){
-		explodeEqn3();
-		EXPLODE_STATE=EXPLODE_STATE+1;
-	}else if (EXPLODE_STATE === 4){
-		explodeEqn4();
-		EXPLODE_STATE=EXPLODE_STATE+1;
+	if (FORWARD) {
+		if (EXPLODE_STATE === 1){
+			explodeEqn();
+			EXPLODE_STATE=EXPLODE_STATE+1;
+		}else if (EXPLODE_STATE === 2){
+			explodeEqn2();
+			EXPLODE_STATE=EXPLODE_STATE+1;
+		}else if (EXPLODE_STATE === 3){
+			explodeEqn3();
+			EXPLODE_STATE=EXPLODE_STATE+1;
+		}else if (EXPLODE_STATE === 4){
+			explodeEqn4();
+			EXPLODE_STATE=EXPLODE_STATE+1;
+			FORWARD = false;
+		}
+	} else {
+		if (EXPLODE_STATE === 2){
+			undoExplodeEqn();
+			FORWARD = true;
+		}else if (EXPLODE_STATE === 3){
+			undoExplodeEqn2();
+		}else if (EXPLODE_STATE === 4){
+			undoExplodeEqn3();
+		}else if (EXPLODE_STATE === 5){
+			undoExplodeEqn4();
+		}
+		EXPLODE_STATE=EXPLODE_STATE-1;
 	}
 	
 }
@@ -517,6 +533,8 @@ function undoExplodeEqn3(){
 	d3.selectAll('svg').selectAll('#zvar_Neuron').remove();
 	
 	d3.selectAll('svg').selectAll('#input3').remove();
+	
+	var svg = d3.selectAll('svg');
 	
 	svg.selectAll('.myones')
 		.transition().duration(1000)

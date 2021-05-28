@@ -16,17 +16,20 @@
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			<h3>UNDERSTANDING NEURAL NETWORK MATHEMATICS</h3>
 
-			<p>Artificial Neural Networks take a few key behaviors from brain cells and try to replicate those behaviors in a computer program. Specifically, there are three features that are explicitly programmed into an artificial neural network.</p>
+			<p>Artificial Neural Networks "imitate" how real brain cells work by focusing on a few key aspects of how neurons behave and turning those behaviors into a computer program. However, ANNs don't try to simulate a biologically complete model of a neuron - only three key features are explicitly programmed into an artificial neural network.</p>
 			
-			<p><strong>1) Cell Input/Output Relationships.</strong> 
-			Real brain cells receive electrical input signals and send out electrical signals to other cells. In a real brain cell, the cell's electrical output is directly related to the cell's electrical input. The neural network is set up the same way: nodes in the artificial neural network listen to inputs, then respond with outputs.<p>
+			<p><strong>1) Talking with many neighboring cells.</strong>
+			Real brain cells receive electrical input signals from their neighboring cells and send out electrical signals to other cells. In essence, the cell listens to its neighbors and decides what to do next. A neural network is set up the same way: nodes in the artificial neural network listen to inputs, then respond with outputs.<p>
 			
-			<p><strong>2) Threshold.</strong> 
-			In the brain, cells must exceed a minimum threshold of electrical input to start generating outputs. Essentially, there's a threshold effect - below the threshold, nothing happens. Above the threshold value, more input leads to more output. The artificial neural network will replicate this feature of real cells: the node will only have output if the input exceeds a threshold value.</p>
+			<p><strong>2) Activation Threshold.</strong>
+			Neurons must receive a minimum electrical input to start generating outputs. Essentially, there's a threshold effect - below the threshold, nothing happens. Above the threshold value, more input leads to more output. Artificial neural networks replicate this feature of real cells: each node will only generate output if receives input that exceeds a threshold value.</p>
 			
-			<p><strong>3) Selective listening.</strong>
-			In the brian, not all electrical input signals are equal; input signals from some brain cells count more than others. For example, some signals could be worth 3x more than others. And some signals could be worth nothing at all. In the artificial neural network, we will replicate this principle by weighting each node's inputs differently.</p>
-			<p>Click the example below to see how the neural network equation imitates biological brains.</p>
+			<p><strong>3) Weighted Listening.</strong>
+			In the brian, not all electrical input signals are equal; input signals from some brain cells count more than others. For example, some inputs activate a given brain cell 3x more than others signals of the same magnitude. And some signals could be worth nothing at all (or even inhibitory - a negative weighting). In the artificial neural network, we will replicate this principle by weighting each node's inputs differently.</p>
+
+			<p>The equation for a neural network with five nodes is shown below (two inputs, two nodes in layer 1, and and output layer).</p>
+
+			<p>Click the example below to see a visual representation of how the neural network equation breaks apart into distinct pieces (circles represent nodes, bars represent the process of aggregating inputs to a node, w's are weights, and T and HR represent inputs to the first layer of nodes).</p>
 			<div id='EquationExplode'>
 				<script src="js/equationExplodeFunctions.js"></script>
 			</div>
